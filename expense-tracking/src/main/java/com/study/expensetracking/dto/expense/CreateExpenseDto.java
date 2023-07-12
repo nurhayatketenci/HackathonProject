@@ -12,6 +12,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class CreateExpenseDto {
 
+
     private String expenseName;
 
     private Double amount;

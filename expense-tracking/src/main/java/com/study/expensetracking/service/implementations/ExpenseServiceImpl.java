@@ -1,5 +1,6 @@
 package com.study.expensetracking.service.implementations;
 
+import com.study.expensetracking.exception.AlreadyExistException;
 import com.study.expensetracking.exception.NotFoundException;
 import com.study.expensetracking.model.Expense;
 import com.study.expensetracking.repository.ExpenseRepository;
@@ -21,7 +22,7 @@ public class ExpenseServiceImpl implements ExpenseService {
     public Expense save(Expense expense) {
         boolean isExpenseExist=this.expenseRepository.existsByExpenseName(expense.getExpenseName());
         if(isExpenseExist){
-            throw new RuntimeException("hata");
+            throw new AlreadyExistException("this expense already exist");
         }
         return expenseRepository.save(expense);
     }

@@ -25,9 +25,8 @@ import java.util.stream.Collectors;
         }
 
         @PostMapping("/save")
-        public ResponseEntity<ExpenseDto> createExpense(@RequestBody CreateExpenseDto createExpenseDto) {
-            Expense savedExpense = expenseService.save(modelMapper.map(createExpenseDto, Expense.class));
-            ExpenseDto expenseDto = modelMapper.map(savedExpense, ExpenseDto.class);
+        public ResponseEntity<ExpenseDto> createExpense(@RequestBody ExpenseDto expenseDto) {
+            Expense savedExpense = expenseService.save(modelMapper.map(expenseDto, Expense.class));
             return ResponseEntity.status(HttpStatus.CREATED).body(expenseDto);
         }
 

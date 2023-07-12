@@ -1,5 +1,6 @@
 package com.study.expensetracking.service.implementations;
 
+import com.study.expensetracking.exception.AlreadyExistException;
 import com.study.expensetracking.exception.NotFoundException;
 import com.study.expensetracking.model.User;
 import com.study.expensetracking.repository.UserRepository;
@@ -7,6 +8,7 @@ import com.study.expensetracking.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.rmi.AlreadyBoundException;
 import java.util.List;
 
 @Service
@@ -24,7 +26,7 @@ public class UserServiceImpl implements UserService {
     public User save(User user) {
         boolean isUserExist = this.userRepository.existsByEmail(user.getEmail());
         if (isUserExist) {
-            throw new RuntimeException("already exist");
+            throw new AlreadyExistException("this user already exist");
         }
         return this.userRepository.save(user);
     }

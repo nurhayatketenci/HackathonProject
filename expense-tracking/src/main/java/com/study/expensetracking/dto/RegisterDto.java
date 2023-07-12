@@ -1,4 +1,4 @@
-package com.study.expensetracking.dto.user;
+package com.study.expensetracking.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,18 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserDto {
-
-    private Long id;
-
+public class RegisterDto {
     private String firstName;
-    private String username;
     private String lastName;
-
+    private String username;
     private String email;
-
     private String password;
-
-    private String phoneNumber;
-
 }

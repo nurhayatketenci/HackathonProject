@@ -1,0 +1,112 @@
+2023-07-12 22:44:01,452 INFO  [main] c.s.e.ExpenseTrackingApplication - Starting ExpenseTrackingApplication using Java 17.0.5 with PID 19672 (C:\Users\Nurhayat\Desktop\Hackhaton\expense-tracking\target\classes started by Nurhayat in C:\Users\Nurhayat\Desktop\Hackhaton\expense-tracking)
+2023-07-12 22:44:01,461 INFO  [main] c.s.e.ExpenseTrackingApplication - No active profile set, falling back to 1 default profile: "default"
+2023-07-12 22:44:05,092 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-12 22:44:05,424 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 293 ms. Found 2 JPA repository interfaces.
+2023-07-12 22:44:10,433 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-07-12 22:44:10,496 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-07-12 22:44:10,504 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-07-12 22:44:10,506 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-07-12 22:44:11,043 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-07-12 22:44:11,047 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 9221 ms
+2023-07-12 22:44:12,325 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-12 22:44:12,598 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.5.Final
+2023-07-12 22:44:12,606 INFO  [main] org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2023-07-12 22:44:12,620 WARN  [main] org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+2023-07-12 22:44:12,944 INFO  [main] o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2023-07-12 22:44:13,332 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-07-12 22:44:13,370 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-07-12 22:44:13,867 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@64dc86c6
+2023-07-12 22:44:13,868 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-07-12 22:44:14,762 INFO  [main] o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2023-07-12 22:44:16,754 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-12 22:44:16,997 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-12 22:44:18,259 INFO  [main] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-07-12 22:44:19,865 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-12 22:44:21,625 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-07-12 22:44:21,796 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-07-12 22:44:21,838 INFO  [main] c.s.e.ExpenseTrackingApplication - Started ExpenseTrackingApplication in 21.522 seconds (process running for 23.322)
+2023-07-12 22:44:23,444 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-12 22:44:23,449 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-07-12 22:44:23,481 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-07-12 22:44:31,341 INFO  [main] c.s.e.ExpenseTrackingApplication - Starting ExpenseTrackingApplication using Java 17.0.5 with PID 9680 (C:\Users\Nurhayat\Desktop\Hackhaton\expense-tracking\target\classes started by Nurhayat in C:\Users\Nurhayat\Desktop\Hackhaton\expense-tracking)
+2023-07-12 22:44:31,383 INFO  [main] c.s.e.ExpenseTrackingApplication - No active profile set, falling back to 1 default profile: "default"
+2023-07-12 22:44:35,211 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-12 22:44:35,702 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 456 ms. Found 2 JPA repository interfaces.
+2023-07-12 22:44:40,177 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-07-12 22:44:40,239 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-07-12 22:44:40,250 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-07-12 22:44:40,251 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-07-12 22:44:41,099 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-07-12 22:44:41,111 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 9213 ms
+2023-07-12 22:44:42,605 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-12 22:44:43,184 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.5.Final
+2023-07-12 22:44:43,189 INFO  [main] org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2023-07-12 22:44:43,254 WARN  [main] org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+2023-07-12 22:44:43,931 INFO  [main] o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2023-07-12 22:44:44,632 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-07-12 22:44:44,758 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-07-12 22:44:45,357 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4357524b
+2023-07-12 22:44:45,360 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-07-12 22:44:46,277 INFO  [main] o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2023-07-12 22:44:48,597 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-12 22:44:48,860 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-12 22:44:50,238 INFO  [main] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-07-12 22:46:48,919 INFO  [main] c.s.e.ExpenseTrackingApplication - Starting ExpenseTrackingApplication using Java 17.0.5 with PID 9780 (C:\Users\Nurhayat\Desktop\Hackhaton\expense-tracking\target\classes started by Nurhayat in C:\Users\Nurhayat\Desktop\Hackhaton\expense-tracking)
+2023-07-12 22:46:48,928 INFO  [main] c.s.e.ExpenseTrackingApplication - No active profile set, falling back to 1 default profile: "default"
+2023-07-12 22:46:52,119 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-12 22:46:52,538 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 386 ms. Found 2 JPA repository interfaces.
+2023-07-12 22:46:55,249 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-07-12 22:46:55,266 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-07-12 22:46:55,272 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-07-12 22:46:55,272 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-07-12 22:46:55,846 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-07-12 22:46:55,855 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6686 ms
+2023-07-12 22:46:56,698 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-12 22:46:56,894 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.5.Final
+2023-07-12 22:46:56,898 INFO  [main] org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2023-07-12 22:46:56,914 WARN  [main] org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+2023-07-12 22:46:57,531 INFO  [main] o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2023-07-12 22:46:58,110 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-07-12 22:46:58,280 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-07-12 22:46:58,836 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@64dc86c6
+2023-07-12 22:46:58,838 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-07-12 22:46:59,955 INFO  [main] o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2023-07-12 22:47:02,296 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-12 22:47:02,545 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-12 22:47:04,556 INFO  [main] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-07-12 22:47:05,651 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-12 22:47:06,860 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-07-12 22:47:06,879 INFO  [main] c.s.e.ExpenseTrackingApplication - Started ExpenseTrackingApplication in 18.988 seconds (process running for 20.423)
+2023-07-12 22:47:06,914 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-12 22:47:06,916 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-07-12 22:47:06,922 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-07-12 22:51:40,289 INFO  [main] c.s.e.ExpenseTrackingApplication - Starting ExpenseTrackingApplication using Java 17.0.5 with PID 4420 (C:\Users\Nurhayat\Desktop\Hackhaton\expense-tracking\target\classes started by Nurhayat in C:\Users\Nurhayat\Desktop\Hackhaton\expense-tracking)
+2023-07-12 22:51:40,295 INFO  [main] c.s.e.ExpenseTrackingApplication - No active profile set, falling back to 1 default profile: "default"
+2023-07-12 22:51:45,768 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-12 22:51:46,464 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 550 ms. Found 2 JPA repository interfaces.
+2023-07-12 22:51:51,103 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-07-12 22:51:51,148 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-07-12 22:51:51,153 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-07-12 22:51:51,154 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-07-12 22:51:51,651 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-07-12 22:51:51,654 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 10888 ms
+2023-07-12 22:51:52,795 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-12 22:51:52,974 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.5.Final
+2023-07-12 22:51:52,979 INFO  [main] org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2023-07-12 22:51:52,994 WARN  [main] org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+2023-07-12 22:51:53,595 INFO  [main] o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2023-07-12 22:51:54,027 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-07-12 22:51:54,069 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-07-12 22:51:54,910 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4357524b
+2023-07-12 22:51:54,923 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-07-12 22:51:56,758 INFO  [main] o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2023-07-12 22:51:58,894 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-12 22:51:59,237 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-12 22:52:01,173 INFO  [main] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-07-12 22:52:03,067 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-12 22:52:55,736 INFO  [main] c.s.e.ExpenseTrackingApplication - Starting ExpenseTrackingApplication using Java 17.0.5 with PID 11156 (C:\Users\Nurhayat\Desktop\Hackhaton\expense-tracking\target\classes started by Nurhayat in C:\Users\Nurhayat\Desktop\Hackhaton\expense-tracking)
+2023-07-12 22:52:55,744 INFO  [main] c.s.e.ExpenseTrackingApplication - No active profile set, falling back to 1 default profile: "default"
+2023-07-12 22:53:00,665 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-12 22:53:01,091 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 395 ms. Found 2 JPA repository interfaces.
+2023-07-12 22:53:05,001 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-07-12 22:53:05,856 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 9581 ms

@@ -25,7 +25,7 @@ public class ExpenseAggregationJob {
     public void aggregateDailyExpenses() {
         LocalDate today = LocalDate.now();
         LocalDate startDate = today.minusDays(1);
-        LocalDate endDate = today; // Bugün
+        LocalDate endDate = today;
 
         List<Expense> dailyExpenses = expenseRepository.findByDateBetween(startDate, endDate);
         double totalDailyExpense = dailyExpenses.stream()
