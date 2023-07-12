@@ -7,9 +7,9 @@ import com.study.expensetracking.model.Expense;
 import java.util.List;
 
 public interface ExpenseService {
-    ExpenseDto save(CreateExpenseDto createExpenseDto);
-    List<ExpenseDto> findAll();
-    ExpenseDto update(ExpenseDto newExpense);
+    Expense save(Expense expense);
+    List<Expense> findAll();
+    Expense update(Expense newExpense);
     void delete(Long id);
-    ExpenseDto findById(Long id);
+    Expense findById(Long id);
 }

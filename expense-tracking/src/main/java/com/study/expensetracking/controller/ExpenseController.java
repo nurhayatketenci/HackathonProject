@@ -2,52 +2,67 @@ package com.study.expensetracking.controller;
 
 import com.study.expensetracking.dto.expense.CreateExpenseDto;
 import com.study.expensetracking.dto.expense.ExpenseDto;
-import com.study.expensetracking.exception.NoDataFoundException;
 import com.study.expensetracking.model.Expense;
 import com.study.expensetracking.service.ExpenseService;
+import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
-@RestController
-@RequestMapping("/api/expense")
-public class ExpenseController {
-    private final ExpenseService expenseService;
 
-    public ExpenseController(ExpenseService expenseService) {
-        this.expenseService = expenseService;
-    }
+    @RestController
+    @RequestMapping("/api/expenses")
+    public class ExpenseController {
+        private final ExpenseService expenseService;
+        private final ModelMapper modelMapper;
 
-    //veriyi eklerken diğerini siliyor?
-    @PostMapping
-    public ResponseEntity<ExpenseDto> save(@RequestBody CreateExpenseDto createExpenseDto){
-        return ResponseEntity.ok(this.expenseService.save(createExpenseDto));
-    }
-    @GetMapping("/getall")
-    public ResponseEntity<List<ExpenseDto>> findAll(){
-        return ResponseEntity.ok(this.expenseService.findAll());
-    }
+        public ExpenseController(ExpenseService expenseService, ModelMapper modelMapper) {
+            this.expenseService = expenseService;
+            this.modelMapper = modelMapper;
+        }
 
-    @GetMapping("/getbyid/{id}")
-    public ResponseEntity<ExpenseDto> findById(@PathVariable Long id){
-        return ResponseEntity.ok(this.expenseService.findById(id));
-    }
+        @PostMapping
+        public ResponseEntity<ExpenseDto> createExpense(@RequestBody CreateExpenseDto createExpenseDto) {
+            Expense savedExpense = expenseService.save(modelMapper.map(createExpenseDto, Expense.class));
+            ExpenseDto expenseDto = modelMapper.map(savedExpense, ExpenseDto.class);
+            return ResponseEntity.status(HttpStatus.CREATED).body(expenseDto);
+        }
 
-    @PutMapping("/update")
-    public ResponseEntity<ExpenseDto> update(@RequestBody ExpenseDto expenseDto){
-        return ResponseEntity.ok(this.expenseService.update(expenseDto));
-    }
+        @GetMapping("/getall")
+        public ResponseEntity<List<ExpenseDto>> getAllExpenses() {
+            List<Expense> expenses = expenseService.findAll();
+            List<ExpenseDto> expenseDtos = expenses.stream()
+                    .map(expense -> modelMapper.map(expense, ExpenseDto.class))
+                    .collect(Collectors.toList());
+            return ResponseEntity.ok(expenseDtos);
+        }
 
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> delete(@PathVariable Long id) {
-        try {
+        @GetMapping("/getbyid/{id}")
+        public ResponseEntity<ExpenseDto> getExpenseById(@PathVariable Long id) {
+            Expense expense = expenseService.findById(id);
+            ExpenseDto expenseDto = modelMapper.map(expense, ExpenseDto.class);
+            return ResponseEntity.ok(expenseDto);
+        }
+
+        @PutMapping("/update/{id}")
+        public ResponseEntity<ExpenseDto> updateExpense(@PathVariable Long id, @RequestBody ExpenseDto expenseDto) {
+            if (!id.equals(expenseDto.getId())) {
+                throw new IllegalArgumentException("Mismatched id");
+            }
+            Expense updatedExpense = expenseService.update(modelMapper.map(expenseDto, Expense.class));
+            ExpenseDto updatedExpenseDto = modelMapper.map(updatedExpense, ExpenseDto.class);
+            return ResponseEntity.ok(updatedExpenseDto);
+        }
+
+        @DeleteMapping("/delete/{id}")
+        public ResponseEntity<Void> deleteExpense(@PathVariable Long id) {
             expenseService.delete(id);
-            return ResponseEntity.ok("Expense deleted successfully.");
-        } catch (NoDataFoundException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Expense not found with id: " + id);
+            return ResponseEntity.noContent().build();
         }
     }
 
-}
+
+

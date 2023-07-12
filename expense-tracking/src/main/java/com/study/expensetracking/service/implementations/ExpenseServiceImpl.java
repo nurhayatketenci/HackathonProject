@@ -1,78 +1,59 @@
 package com.study.expensetracking.service.implementations;
 
-import com.study.expensetracking.dto.expense.CreateExpenseDto;
-import com.study.expensetracking.dto.expense.ExpenseDto;
 import com.study.expensetracking.exception.NoDataFoundException;
 import com.study.expensetracking.model.Expense;
 import com.study.expensetracking.repository.ExpenseRepository;
 import com.study.expensetracking.service.ExpenseService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
+
 
 @Service
 public class ExpenseServiceImpl implements ExpenseService {
     private final ExpenseRepository expenseRepository;
-    private final ModelMapper modelMapper;
 
     public ExpenseServiceImpl(ExpenseRepository expenseRepository, ModelMapper modelMapper) {
         this.expenseRepository = expenseRepository;
-        this.modelMapper = modelMapper;
     }
 
     @Override
-    public ExpenseDto save(CreateExpenseDto createExpenseDto) {
-        boolean isExpenseExist = this.expenseRepository.existsByExpenseName(createExpenseDto.getExpenseName());
-        if (isExpenseExist) {
-            throw new RuntimeException("This expense already exists.");
+    public Expense save(Expense expense) {
+        boolean isExpenseExist=this.expenseRepository.existsByExpenseName(expense.getExpenseName());
+        if(isExpenseExist){
+            throw new RuntimeException("hata");
         }
-        Expense expenseToSave=this.modelMapper.map(createExpenseDto,Expense.class);
-        return this.modelMapper.map(this.expenseRepository.save(expenseToSave), ExpenseDto.class);
-    }
-
-
-    @Override
-    public List<ExpenseDto> findAll() {
-        List<ExpenseDto> expenses=expenseRepository.findAll()
-                .stream()
-                .map(campaign -> this.modelMapper.map(campaign,ExpenseDto.class))
-                .collect(Collectors.toList());
-        return expenses;
+        return expenseRepository.save(expense);
     }
 
     @Override
-    public ExpenseDto findById(Long id) {
-        Expense expense = this.expenseRepository.findById(id)
-                .orElseThrow(() -> new NoDataFoundException("Expense not found with id: " + id));
-
-        ExpenseDto expenseDto = this.modelMapper.map(expense, ExpenseDto.class);
-        return expenseDto;
+    public List<Expense> findAll() {
+        return expenseRepository.findAll();
     }
 
     @Override
-    public ExpenseDto update(ExpenseDto newExpense) {
-        Optional<Expense> expenseOptional = this.expenseRepository.findById(newExpense.getId());
-        if (expenseOptional.isPresent()) {
-            Expense expense = expenseOptional.get();
-            expense.setExpenseName(newExpense.getExpenseName());
-            expense.setAmount(newExpense.getAmount());
-            expense.setDate(newExpense.getDate());
-            this.expenseRepository.save(expense);
-            return newExpense;
-        } else {
-            throw new NoDataFoundException("Expense not found with id: " + newExpense.getId());
-        }
+    public Expense update(Expense newExpense) {
+        Expense existingExpense = expenseRepository.findById(newExpense.getId())
+                .orElseThrow(() -> new NoDataFoundException("Expense not found with id: " + newExpense.getId()));
+
+        existingExpense.setExpenseName(newExpense.getExpenseName());
+        existingExpense.setAmount(newExpense.getAmount());
+        existingExpense.setDate(newExpense.getDate());
+
+        return expenseRepository.save(existingExpense);
     }
 
     @Override
     public void delete(Long id) {
-        Optional<Expense> expenseOptional = this.expenseRepository.findById(id);
-        if (expenseOptional.isPresent()) {
-            Expense expense = expenseOptional.get();
-            this.expenseRepository.delete(expense);
-        }
+        Expense expense = expenseRepository.findById(id)
+                .orElseThrow(() -> new NoDataFoundException("Expense not found with id: " + id));
+
+        expenseRepository.delete(expense);
+    }
+
+    @Override
+    public Expense findById(Long id) {
+        return expenseRepository.findById(id)
+                .orElseThrow(() -> new NoDataFoundException("Expense not found with id: " + id));
     }
 }
