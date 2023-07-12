@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 @Data
@@ -23,6 +24,7 @@ public class User {
 
     @Column(name="last_name")
     private String lastName;
+    private String username;
 
     @Column(name = "phone_number")
     private String phoneNumber;
@@ -30,6 +32,9 @@ public class User {
     private String email;
 
     private String password;
+
     @OneToMany(mappedBy = "user")
     private List<Expense> expenses;
+
+
 }

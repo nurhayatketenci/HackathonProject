@@ -9,7 +9,9 @@ import java.util.List;
 public interface ExpenseService {
     Expense save(Expense expense);
     List<Expense> findAll();
-    Expense update(Expense newExpense);
+    Expense update(Long id,Expense newExpense);
     void delete(Long id);
     Expense findById(Long id);
+     Double getTotalAmountByUserId(Long userId);
+
 }

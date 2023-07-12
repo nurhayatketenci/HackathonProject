@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
             this.modelMapper = modelMapper;
         }
 
-        @PostMapping
+        @PostMapping("/save")
         public ResponseEntity<ExpenseDto> createExpense(@RequestBody CreateExpenseDto createExpenseDto) {
             Expense savedExpense = expenseService.save(modelMapper.map(createExpenseDto, Expense.class));
             ExpenseDto expenseDto = modelMapper.map(savedExpense, ExpenseDto.class);
@@ -40,7 +40,7 @@ import java.util.stream.Collectors;
             return ResponseEntity.ok(expenseDtos);
         }
 
-        @GetMapping("/getbyid/{id}")
+        @GetMapping("/findbyid/{id}")
         public ResponseEntity<ExpenseDto> getExpenseById(@PathVariable Long id) {
             Expense expense = expenseService.findById(id);
             ExpenseDto expenseDto = modelMapper.map(expense, ExpenseDto.class);
@@ -52,7 +52,7 @@ import java.util.stream.Collectors;
             if (!id.equals(expenseDto.getId())) {
                 throw new IllegalArgumentException("Mismatched id");
             }
-            Expense updatedExpense = expenseService.update(modelMapper.map(expenseDto, Expense.class));
+            Expense updatedExpense = expenseService.update(id,(modelMapper.map(expenseDto, Expense.class)));
             ExpenseDto updatedExpenseDto = modelMapper.map(updatedExpense, ExpenseDto.class);
             return ResponseEntity.ok(updatedExpenseDto);
         }
@@ -62,6 +62,12 @@ import java.util.stream.Collectors;
             expenseService.delete(id);
             return ResponseEntity.noContent().build();
         }
+        @GetMapping("/gettotalexpense/{userId}")
+        public ResponseEntity<Double> getTotalExpenseByUserId(@PathVariable Long userId) {
+            Double totalExpense = expenseService.getTotalAmountByUserId(userId);
+            return ResponseEntity.ok(totalExpense);
+        }
+
     }
 
 

@@ -1,6 +1,6 @@
 package com.study.expensetracking.service.implementations;
 
-import com.study.expensetracking.exception.NoDataFoundException;
+import com.study.expensetracking.exception.NotFoundException;
 import com.study.expensetracking.model.Expense;
 import com.study.expensetracking.repository.ExpenseRepository;
 import com.study.expensetracking.service.ExpenseService;
@@ -32,10 +32,8 @@ public class ExpenseServiceImpl implements ExpenseService {
     }
 
     @Override
-    public Expense update(Expense newExpense) {
-        Expense existingExpense = expenseRepository.findById(newExpense.getId())
-                .orElseThrow(() -> new NoDataFoundException("Expense not found with id: " + newExpense.getId()));
-
+    public Expense update(Long id,Expense newExpense) {
+        Expense existingExpense = findById(id);
         existingExpense.setExpenseName(newExpense.getExpenseName());
         existingExpense.setAmount(newExpense.getAmount());
         existingExpense.setDate(newExpense.getDate());
@@ -45,15 +43,19 @@ public class ExpenseServiceImpl implements ExpenseService {
 
     @Override
     public void delete(Long id) {
-        Expense expense = expenseRepository.findById(id)
-                .orElseThrow(() -> new NoDataFoundException("Expense not found with id: " + id));
-
+        Expense expense = findById(id);
         expenseRepository.delete(expense);
     }
 
     @Override
     public Expense findById(Long id) {
         return expenseRepository.findById(id)
-                .orElseThrow(() -> new NoDataFoundException("Expense not found with id: " + id));
+                .orElseThrow(() -> new NotFoundException("Expense not found with id: " + id));
     }
+
+    @Override
+    public Double getTotalAmountByUserId(Long userId) {
+        return expenseRepository.getTotalAmountByUserId(userId);
+    }
+
 }
