@@ -12,6 +12,7 @@ public interface ExpenseRepository extends JpaRepository<Expense,Long> {
     Double getTotalAmountByUserId(Long userId);
 
      List<Expense> findByDateBetween(LocalDate startDate, LocalDate endDate);
+     List<Expense> findByCategoryId(Long categoryId);
 
 
 }

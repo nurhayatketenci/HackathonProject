@@ -26,6 +26,7 @@ public class ExpenseDto {
     private LocalDate date;
 
     private Long userId;
+    private Long categoryId;
 
     public static ExpenseDto from(Expense expense){
         return ExpenseDto.builder()

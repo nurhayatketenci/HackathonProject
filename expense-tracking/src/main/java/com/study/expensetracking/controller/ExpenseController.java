@@ -64,7 +64,11 @@ import java.util.stream.Collectors;
             Double totalExpense = expenseService.getTotalAmountByUserId(userId);
             return ResponseEntity.ok(totalExpense);
         }
+        @GetMapping("/getbycategory/{id}")
+        public ResponseEntity<List<Expense>> getByCategory(@PathVariable Long id) {
 
+            return ResponseEntity.ok(this.expenseService.getByCategoryId(id));
+        }
     }
 
 

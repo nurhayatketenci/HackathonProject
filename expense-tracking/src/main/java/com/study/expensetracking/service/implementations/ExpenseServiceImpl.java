@@ -64,4 +64,9 @@ public class ExpenseServiceImpl implements ExpenseService {
         return expenseRepository.getTotalAmountByUserId(userId);
     }
 
+    @Override
+    public List<Expense> getByCategoryId(Long id) {
+        return this.expenseRepository.findByCategoryId(id);
+    }
+
 }

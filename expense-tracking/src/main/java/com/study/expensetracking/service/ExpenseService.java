@@ -13,5 +13,6 @@ public interface ExpenseService {
     void delete(Long id);
     Expense findById(Long id);
      Double getTotalAmountByUserId(Long userId);
+     List<Expense> getByCategoryId(Long id);
 
 }
