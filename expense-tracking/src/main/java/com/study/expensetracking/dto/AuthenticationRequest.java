@@ -1,16 +1,15 @@
 package com.study.expensetracking.dto;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
+@Builder
 @AllArgsConstructor
-public class RegisterDto {
-    private String firstName;
-    private String lastName;
-    private String username;
+@NoArgsConstructor
+public class AuthenticationRequest {
     private String email;
     private String password;
 }

@@ -1,6 +1,5 @@
 package com.study.expensetracking.controller;
 
-import com.study.expensetracking.dto.expense.CreateExpenseDto;
 import com.study.expensetracking.dto.expense.ExpenseDto;
 import com.study.expensetracking.model.Expense;
 import com.study.expensetracking.service.ExpenseService;
@@ -8,7 +7,6 @@ import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
