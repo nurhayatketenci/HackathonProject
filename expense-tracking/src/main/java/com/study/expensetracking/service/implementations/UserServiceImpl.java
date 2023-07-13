@@ -5,6 +5,7 @@ import com.study.expensetracking.exception.NotFoundException;
 import com.study.expensetracking.model.User;
 import com.study.expensetracking.repository.UserRepository;
 import com.study.expensetracking.service.UserService;
+import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +24,7 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
+    @Transactional
     public User save(User user) {
         boolean isUserExist = this.userRepository.existsByEmail(user.getEmail());
         if (isUserExist) {
@@ -38,6 +40,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public User update(Long id, User newUser) {
         User existUser = findById(id);
         existUser.setFirstName(newUser.getFirstName());
@@ -49,6 +52,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public void delete(Long id) {
         User user = findById(id);
         this.userRepository.delete(user);

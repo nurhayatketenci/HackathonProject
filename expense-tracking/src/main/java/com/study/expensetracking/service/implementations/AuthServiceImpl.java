@@ -7,6 +7,7 @@ import com.study.expensetracking.model.User;
 import com.study.expensetracking.repository.UserRepository;
 import com.study.expensetracking.security.JwtService;
 import com.study.expensetracking.service.AuthService;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -23,6 +24,7 @@ public class AuthServiceImpl implements AuthService {
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
     @Override
+    @Transactional
     public AuthenticationResponse register(RegisterRequest request) {
         var user= User.builder().firstName(request.getFirstName())
                 .lastName(request.getLastName())
@@ -38,6 +40,7 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
+    @Transactional
     public AuthenticationResponse authenticate(RegisterRequest request) {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(

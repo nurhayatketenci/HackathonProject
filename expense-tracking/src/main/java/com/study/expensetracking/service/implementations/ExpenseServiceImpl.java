@@ -5,6 +5,7 @@ import com.study.expensetracking.exception.NotFoundException;
 import com.study.expensetracking.model.Expense;
 import com.study.expensetracking.repository.ExpenseRepository;
 import com.study.expensetracking.service.ExpenseService;
+import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -18,7 +19,9 @@ public class ExpenseServiceImpl implements ExpenseService {
         this.expenseRepository = expenseRepository;
     }
 
+
     @Override
+    @Transactional
     public Expense save(Expense expense) {
         boolean isExpenseExist=this.expenseRepository.existsByExpenseName(expense.getExpenseName());
         if(isExpenseExist){
@@ -33,6 +36,7 @@ public class ExpenseServiceImpl implements ExpenseService {
     }
 
     @Override
+    @Transactional
     public Expense update(Long id,Expense newExpense) {
         Expense existingExpense = findById(id);
         existingExpense.setExpenseName(newExpense.getExpenseName());
@@ -43,6 +47,7 @@ public class ExpenseServiceImpl implements ExpenseService {
     }
 
     @Override
+    @Transactional
     public void delete(Long id) {
         Expense expense = findById(id);
         expenseRepository.delete(expense);

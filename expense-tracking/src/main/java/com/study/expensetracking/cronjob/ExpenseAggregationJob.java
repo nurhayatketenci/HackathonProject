@@ -63,5 +63,13 @@ public class ExpenseAggregationJob {
 
         logger.info("job output total expense: "+ totalMonthlyExpense);
     }
+    @Scheduled(cron = "*/20 * * * * *")
+    public void aggregateSecondlyExpenses() {
+      List<Expense> totalSecondsExpense=expenseRepository.findAll();
+      double totalSeconds=totalSecondsExpense.stream()
+              .mapToDouble(Expense::getAmount)
+              .sum();
+      logger.info("job output total expense: "+ totalSeconds);
+    }
 }
 
